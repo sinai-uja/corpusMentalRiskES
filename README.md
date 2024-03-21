@@ -1,5 +1,5 @@
 # MentalRiskES
-MentalRiskEs is a new dataset about mental disorders in Spanish. The dataset is divided into three distinct mental disorders:
+MentalRiskES is a new dataset about mental disorders in Spanish. The dataset is divided into three distinct mental disorders:
 - Eating Disorder
 - Depression
 - Anxiety
@@ -48,6 +48,11 @@ So, the labels 'rbs' and 'rbc' must sum to 1, and the labels 'rsf','rsa', 'rso' 
 
 ### Preprocessing
 The same corpus is found with emojis or without emojis, that is to say, in the folder 'processed' is the corpus with emojis in text format while in the folder 'raw' is the corpus with emojis in original format.
+
+## Contact
+To request access to the corpus contact:
+- Alba M. Mármol Romero (amarmol@ujaen.es)
+- Arturo Montejo Ráez (amontejo@ujaen.es)
 
 ## Acknowledgements
 This work has been partially supported by projects CONSENSO (PID2021-122263OB-C21), MODERATES (TED2021-130145B-I00), SocialTOX (PDC2022-133146-C21) funded by Plan Nacional I+D+i from the Spanish Government, project PRECOM (SUBV-00016) funded by Spanish Ministry of Consumer Affairs, and the Big Hug project (P20\_00956, PAIDI 2020), funded by the Andalusian Regional Government.
