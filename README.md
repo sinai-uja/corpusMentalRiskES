@@ -49,6 +49,9 @@ So, the labels 'rbs' and 'rbc' must sum to 1, and the labels 'rsf','rsa', 'rso' 
 ### Preprocessing
 The same corpus is found with emojis or without emojis, that is to say, in the folder 'processed' is the corpus with emojis in text format while in the folder 'raw' is the corpus with emojis in original format.
 
+## Ethics Statement
+The main purpose of creating this dataset is to provide a tool for developing systems with scientific aims and advancing artificial intelligence to detect mental disorders among young people on social networks at an early stage. The data has been labelled using measures to ensure gender diversity and avoid discrimination through our annotation platform. It's important to emphasize that all findings from this dataset are intended strictly for non-clinical research. Individuals in need of professional help are advised to consult licensed psychiatrists or clinicians.
+
 ## Contact
 To request access to the corpus contact:
 - Alba M. Mármol Romero (amarmol@ujaen.es)
