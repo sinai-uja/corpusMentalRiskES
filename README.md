@@ -49,6 +49,20 @@ So, the labels 'rbs' and 'rbc' must sum to 1, and the labels 'rsf','rsa', 'rso' 
 ### Preprocessing
 The same corpus is found with emojis or without emojis, that is to say, in the folder 'processed' is the corpus with emojis in text format while in the folder 'raw' is the corpus with emojis in original format.
 
+### MentalRiskes evaluation campaign
+MentalRiskEs is a shared task organized at IberLEF. The aim of this task is to promote the early detection of mental risk disorders in Spanish. In this task we made use of the corpusMentalRiskES, the partitions used are available in the folder MentalRiskES2023edition.zip. To cite the task: 
+Mármol-Romero, A. M., Moreno-Muñoz, A., Plaza-del-Arco, F. M., Molina-González, M. D., Martín-Valdivia, M. T., Ureña-López, L. A., & Montejo-Raéz, A. (2023). Overview of MentalriskES at IberLEF 2023: Early Detection of Mental Disorders Risk in Spanish. Procesamiento del Lenguaje Natural, 71, 329-350.
+```
+@article{marmol2023overview,
+  title={Overview of MentalriskES at IberLEF 2023: Early Detection of Mental Disorders Risk in Spanish},
+  author={M{\'a}rmol-Romero, Alba Mar{\'\i}a and Moreno-Mu{\~n}oz, Adri{\'a}n and Plaza-del-Arco, Flor Miriam and Molina-Gonz{\'a}lez, Mar{\'\i}a Dolores and Mart{\'\i}n-Valdivia, Maria Teresa and Ure{\~n}a-L{\'o}pez, Luis Alfonso and Montejo-Ra{\'e}z, Arturo},
+  journal={Procesamiento del Lenguaje Natural},
+  volume={71},
+  pages={329--350},
+  year={2023}
+}
+```
+
 ## Ethics Statement
 The main purpose of creating this dataset is to provide a tool for developing systems with scientific aims and advancing artificial intelligence to detect mental disorders among young people on social networks at an early stage. The data has been labelled using measures to ensure gender diversity and avoid discrimination through our annotation platform. It's important to emphasize that all findings from this dataset are intended strictly for non-clinical research. Individuals in need of professional help are advised to consult licensed psychiatrists or clinicians.
 
@@ -60,7 +74,7 @@ To request access to the corpus contact:
 ## Acknowledgements
 This work has been partially supported by projects CONSENSO (PID2021-122263OB-C21), MODERATES (TED2021-130145B-I00), SocialTOX (PDC2022-133146-C21) funded by Plan Nacional I+D+i from the Spanish Government, project PRECOM (SUBV-00016) funded by Spanish Ministry of Consumer Affairs, and the Big Hug project (P20\_00956, PAIDI 2020), funded by the Andalusian Regional Government.
 
-## Citation
+## Citation of the corpus
 Romero, A. M. M., Muñoz, A. M., Del Arco, F. M. P., Molina-González, M. D., Valdivia, M. T. M., Lopez, L. A. U., & Ráez, A. M. (2024, May). MentalRiskES: A New Corpus for Early Detection of Mental Disorders in Spanish. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024) (pp. 11204-11214).
 https://aclanthology.org/2024.lrec-main.978
 
