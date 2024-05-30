@@ -62,6 +62,7 @@ This work has been partially supported by projects CONSENSO (PID2021-122263OB-C2
 
 ## Citation
 Romero, A. M. M., Muñoz, A. M., Del Arco, F. M. P., Molina-González, M. D., Valdivia, M. T. M., Lopez, L. A. U., & Ráez, A. M. (2024, May). MentalRiskES: A New Corpus for Early Detection of Mental Disorders in Spanish. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024) (pp. 11204-11214).
+https://aclanthology.org/2024.lrec-main.978
 
 ```
 @inproceedings{marmol-romero-etal-2024-mentalriskes-new,
