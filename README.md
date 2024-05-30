@@ -61,4 +61,32 @@ To request access to the corpus contact:
 This work has been partially supported by projects CONSENSO (PID2021-122263OB-C21), MODERATES (TED2021-130145B-I00), SocialTOX (PDC2022-133146-C21) funded by Plan Nacional I+D+i from the Spanish Government, project PRECOM (SUBV-00016) funded by Spanish Ministry of Consumer Affairs, and the Big Hug project (P20\_00956, PAIDI 2020), funded by the Andalusian Regional Government.
 
 ## Citation
-Alba María Mármol-Romero, Adrián Moreno-Muñoz, Flor Miriam Plaza-Del-Arco, M. Dolores Molina-González, Arturo Montejo-Ráez (2024). MentalRiskES: A New Corpus for Early Detection of Mental Disorders in Spanish. *To be publish in COLING 2024*.
+Romero, A. M. M., Muñoz, A. M., Del Arco, F. M. P., Molina-González, M. D., Valdivia, M. T. M., Lopez, L. A. U., & Ráez, A. M. (2024, May). MentalRiskES: A New Corpus for Early Detection of Mental Disorders in Spanish. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024) (pp. 11204-11214).
+
+```
+@inproceedings{marmol-romero-etal-2024-mentalriskes-new,
+    title = "{M}ental{R}isk{ES}: A New Corpus for Early Detection of Mental Disorders in {S}panish",
+    author = "M{\'a}rmol Romero, Alba M.  and
+      Moreno Mu{\~n}oz, Adri{\'a}n  and
+      Plaza-del-Arco, Flor Miriam  and
+      Molina Gonz{\'a}lez, M. Dolores  and
+      Mart{\'\i}n Valdivia, Mar{\'\i}a Teresa  and
+      Ure{\~n}a-L{\'o}pez, L. Alfonso  and
+      Montejo R{\'a}ez, Arturo",
+    editor = "Calzolari, Nicoletta  and
+      Kan, Min-Yen  and
+      Hoste, Veronique  and
+      Lenci, Alessandro  and
+      Sakti, Sakriani  and
+      Xue, Nianwen",
+    booktitle = "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+    month = may,
+    year = "2024",
+    address = "Torino, Italia",
+    publisher = "ELRA and ICCL",
+    url = "https://aclanthology.org/2024.lrec-main.978",
+    pages = "11204--11214",
+    abstract = "With mental health issues on the rise on the Web, especially among young people, there is a growing need for effective identification and intervention. In this paper, we introduce a new open-sourced corpus for the early detection of mental disorders in Spanish, focusing on eating disorders, depression, and anxiety. It consists of user messages posted on groups within the Telegram message platform and contains over 1,300 subjects with more than 45,000 messages posted in different public Telegram groups. This corpus has been manually annotated via crowdsourcing and is prepared for its use in several Natural Language Processing tasks including text classification and regression tasks. The samples in the corpus include both text and time data. To provide a benchmark for future research, we conduct experiments on text classification and regression by using state-of-the-art transformer-based models.",
+}
+
+```
