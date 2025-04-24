@@ -75,19 +75,19 @@ To request access to the corpus contact:
 This work has been partially supported by projects CONSENSO (PID2021-122263OB-C21), MODERATES (TED2021-130145B-I00), SocialTOX (PDC2022-133146-C21) funded by Plan Nacional I+D+i from the Spanish Government, project PRECOM (SUBV-00016) funded by Spanish Ministry of Consumer Affairs, and the Big Hug project (P20\_00956, PAIDI 2020), funded by the Andalusian Regional Government.
 
 ## Citation of the corpus
-Romero, A. M. M., Muñoz, A. M., Del Arco, F. M. P., Molina-González, M. D., Valdivia, M. T. M., Lopez, L. A. U., & Ráez, A. M. (2024, May). MentalRiskES: A New Corpus for Early Detection of Mental Disorders in Spanish. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024) (pp. 11204-11214).
+Mármól-Romero, A. M., Moreno-Muñoz, A., Plaza-del-Arco, F. M., Molina-González, M. D., Martín-Valdivia, M. T., Ureña-López, L. A., & Montejo-Ráez, A. (2024). MentalRiskES: A new corpus for early detection of mental disorders in Spanish. En N. Calzolari, M.-Y. Kan, V. Hoste, A. Lenci, S. Sakti & N. Xue (Eds.), Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024) (pp. 11204–11214). ELRA and ICCL. 
 https://aclanthology.org/2024.lrec-main.978
 
 ```
 @inproceedings{marmol-romero-etal-2024-mentalriskes-new,
     title = "{M}ental{R}isk{ES}: A New Corpus for Early Detection of Mental Disorders in {S}panish",
-    author = "M{\'a}rmol Romero, Alba M.  and
-      Moreno Mu{\~n}oz, Adri{\'a}n  and
+    author = "M{\'a}rmol-Romero, Alba M.  and
+      Moreno-Mu{\~n}oz, Adri{\'a}n  and
       Plaza-del-Arco, Flor Miriam  and
-      Molina Gonz{\'a}lez, M. Dolores  and
-      Mart{\'\i}n Valdivia, Mar{\'\i}a Teresa  and
+      Molina-Gonz{\'a}lez, M. Dolores  and
+      Mart{\'\i}n-Valdivia, Mar{\'\i}a Teresa  and
       Ure{\~n}a-L{\'o}pez, L. Alfonso  and
-      Montejo R{\'a}ez, Arturo",
+      Montejo-R{\'a}ez, Arturo",
     editor = "Calzolari, Nicoletta  and
       Kan, Min-Yen  and
       Hoste, Veronique  and
