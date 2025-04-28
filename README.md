@@ -50,7 +50,7 @@ So, the labels 'rbs' and 'rbc' must sum to 1, and the labels 'rsf','rsa', 'rso' 
 The same corpus is found with emojis or without emojis, that is to say, in the folder 'processed' is the corpus with emojis in text format while in the folder 'raw' is the corpus with emojis in original format.
 
 ### MentalRiskES evaluation campaign
-[MentalRiskES](https://sites.google.com/view/mentalriskes) is a shared task organized at IberLEF. The aim of this task is to promote the early detection of mental risk disorders in Spanish. In this task we made use of the corpusMentalRiskES, the partitions used are available in the folder MentalRiskES2023edition.zip. To cite the task: 
+[MentalRiskES](https://sites.google.com/view/mentalriskes) is a shared task organized at IberLEF. This task aims to promote the early detection of mental risk disorders in Spanish. In this task, we used the corpusMentalRiskES, the partitions used are available in the folder MentalRiskES2023edition.zip. To cite the task: 
 Mármol-Romero, A. M., Moreno-Muñoz, A., Plaza-del-Arco, F. M., Molina-González, M. D., Martín-Valdivia, M. T., Ureña-López, L. A., & Montejo-Raéz, A. (2023). Overview of MentalriskES at IberLEF 2023: Early Detection of Mental Disorders Risk in Spanish. Procesamiento del Lenguaje Natural, 71, 329-350.
 ```
 @article{marmol2023overview,
@@ -60,6 +60,17 @@ Mármol-Romero, A. M., Moreno-Muñoz, A., Plaza-del-Arco, F. M., Molina-Gonzále
   volume={71},
   pages={329--350},
   year={2023}
+}
+```
+Mármol-Romero, A. M., Moreno-Muñoz, A., Plaza-del-Arco, F. M., Molina-González, M. D., Martín-Valdivia, M. T., Ureña-López, L. A., & Montejo-Raéz, A. (2024). Overview of MentalriskES at IberLEF 2024: Early Detection of Mental Disorders Risk in Spanish. Procesamiento del Lenguaje Natural, 73, 435-448.
+```
+@article{marmol2024overview,
+  title={Overview of MentalriskES at IberLEF 2024: Early Detection of Mental Disorders Risk in Spanish},
+  author={M{\'a}rmol-Romero, Alba Mar{\'\i}a and Moreno-Mu{\~n}oz, Adri{\'a}n and Plaza-del-Arco, Flor Miriam and Molina-Gonz{\'a}lez, Mar{\'\i}a Dolores and Mart{\'\i}n-Valdivia, Maria Teresa and Ure{\~n}a-L{\'o}pez, Luis Alfonso and Montejo-Ra{\'e}z, Arturo},
+  journal={Procesamiento del Lenguaje Natural},
+  volume={73},
+  pages={435--448},
+  year={2024}
 }
 ```
 
@@ -81,7 +92,7 @@ https://aclanthology.org/2024.lrec-main.978
 ```
 @inproceedings{marmol-romero-etal-2024-mentalriskes-new,
     title = "{M}ental{R}isk{ES}: A New Corpus for Early Detection of Mental Disorders in {S}panish",
-    author = "M{\'a}rmol-Romero, Alba M.  and
+    author = "M{\'a}rmol-Romero, Alba Mar{\'\i}a  and
       Moreno-Mu{\~n}oz, Adri{\'a}n  and
       Plaza-del-Arco, Flor Miriam  and
       Molina-Gonz{\'a}lez, M. Dolores  and
