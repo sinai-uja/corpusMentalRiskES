@@ -99,7 +99,7 @@ subject104,0
 The collections contain messages written by real users, so access is restricted and granted on an individual basis, only for research purposes.
 
 1. Fill in and sign the [**Individual Application to use the MentalRiskES Research Collection**](https://docs.google.com/forms/d/e/1FAIpQLSfASdCzvR6DCWpFXb4eDpF6gh7CjhJKT1bH2l-SdCcxTP7l7Q/viewform?usp=header), indicating the collection you need (for example `mentalriskes2023_task2` or `mentalriskes2024_task1`).
-2. Contact the organizers (see [Contact](#contact)).
+2. Contact the anizers (see [Contact](#contact)).
 3. You will receive the password of the requested zip file(s) after your application is reviewed.
 
 By applying you accept, among others, the following terms (the signed application contains the full text):
@@ -109,7 +109,7 @@ By applying you accept, among others, the following terms (the signed applicatio
 - You may not publish any portion of the data (e.g. example posts) other than summary statistics, nor share it with anyone else.
 - You may not make commercial use of the collection.
 - Any publication derived from the collection must cite the corresponding paper(s) (see [Citation](#citation)).
-- You must stop using the collection and delete it if the organizers or copyright holders ask you to.
+- You must stop using the collection and delete it if the anizers or copyright holders ask you to.
 
 All findings obtained with this data are intended strictly for **non-clinical research**. Individuals in need of professional help are advised to consult licensed psychiatrists or clinicians.
 
@@ -117,7 +117,7 @@ All findings obtained with this data are intended strictly for **non-clinical re
 
 The corpus of Telegram conversations on which the 2023 and 2024 editions were built is distributed separately, with automated access, as a Hugging Face dataset:
 
-👉 **[huggingface.co/datasets/TU_ORG/MentalRiskES](https://huggingface.co/datasets/amarmol/MentalRiskES)**
+👉 **[huggingface.co/datasets/amarmol/MentalRiskES](https://huggingface.co/datasets/amarmol/MentalRiskES)**
 
 It contains the whole corpus (eating disorders, depression and anxiety, with the processed and the raw version of the text), loadable with `load_dataset`. It does **not** contain the train/trial/test partitions of the shared task: those are the collections of this repository.
 
