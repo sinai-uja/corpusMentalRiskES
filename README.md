@@ -33,7 +33,7 @@ The task is solved as an online problem: participants receive a continuous strea
 │   ├── mentalriskes2025/
 │   │   ├── mentalriskes2025_task1.zip
 │   │   └── mentalriskes2025_task2.zip
-│   └── mentalriskes2026/        # TODO: add when the collection is released
+│   
 ├── scripts/
 │   ├── MentalRiskES2023/
 │   │   ├── classEvaluation.py
