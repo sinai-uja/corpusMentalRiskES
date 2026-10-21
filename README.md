@@ -1,57 +1,142 @@
-# MentalRiskES
-MentalRiskES is a new dataset about mental disorders in Spanish. The dataset is divided into three distinct mental disorders:
-- Eating Disorder
-- Depression
-- Anxiety
-  
-Each dataset comprises a set of subjects and their corresponding message threads from a Telegram social network chat.
+# MentalRiskES shared task at IberLEF
 
-## How is it constructed? 🛠️
-Public groups on the [Telegram social network](https://telegram.org/) were accessed, and conversations were extracted from them. This data was processed, and we retained only the text messages, excluding images, audio, and other media. 
-In order to carry out the annotation, a subset of messages was extracted from each subject. This message thread was annotated by 10 different annotators through the [Prolific platform](https://www.prolific.com/) and made use of the [Doccano annotation platform](https://github.com/doccano/doccano).
+This repository distributes the data of **MentalRiskES**, the shared task on the early detection of mental disorder risk in Spanish organized at [IberLEF](https://sites.google.com/view/iberlef-2026/) (the Iberian Languages Evaluation Forum, held with the SEPLN conference).
 
-In this way, we associated a user ID with some tags that emerged after averaging the annotators' decisions. The labels available for each set are:
-- Eating Disorder: suffer (s), control (c)
-- Depression: suffer + in favour (sf), suffer + against (sa), suffer + other (so), control (c)
-- Anxiety: suffer (s), control (c)
-  
-### Annotation guides 📄
-Each corpus has an annotation guide adapted to its case. It is accompanied by a user manual for a better understanding of the annotation platform. Links to the annotation guides are provided below:
-- [Annotation Guide for the Anxiety corpus](https://drive.google.com/file/d/1wpJBWu4mNEw9bmSkX089G67TfNzSkjKX/view?usp=sharing)
-- [Annotation Guide for the Depression corpus](https://drive.google.com/file/d/10-18MqgbKhQ91QyhUFOzYsfIugAfBu01/view?usp=drive_link)
-- [Annotation Guide for the Eating Disorder corpus](https://drive.google.com/file/d/1RwZrQgcXs5ZwLwa-F-b38UvsnfHYQuzM/view?usp=drive_link)
+> ⚠️ **Not to be confused with the MentalRiskES corpus.**
+> *MentalRiskES* is the name of both this shared task and a dataset of Telegram conversations about eating disorders, depression and anxiety (the [MentalRiskES corpus](https://huggingface.co/datasets/TU_ORG/MentalRiskES), LREC-COLING 2024). The corpus was the data source of the **first two editions** of the shared task (2023 and 2024). The **2025 and 2026 editions use different data** and are unrelated to the corpus.
+> The corpus is no longer distributed from this repository: it is available on Hugging Face (see [The MentalRiskES corpus](#the-mentalriskes-corpus)).
 
-The most predominant label among the annotators is taken, being 1 equal to suffers and 0 equal to does not suffer. In case of a tie, the subject is taken as suffering.
+## Editions
 
-### Labels 🔴🟢
-The values available in Anxiety files are:
-- bs (binary suffer): 1 if the subject suffers and 0 if not, according to the frequency of the labels (in case of a tie, it is marked as suffers)
-- bc (binary control): 1 if the subject does not suffer and 0 if they d,o according to the frequency of the labels (in case of a tie, it is marked as suffers)
-- rbs (regression binary suffer): number of times the subject has been marked as suffering among the total number of scorers, i.e., 10
-- rbc (regression binary control): number of times the subject has been marked as not suffering among the total number of scorers, i.e., 10
+The task is solved as an online problem: participants receive a continuous stream of messages, organized in rounds, and must detect the risk as early as possible, so systems are evaluated on both accuracy and detection speed.
 
-The values available in the Depression and EatingDisorders files are: 
-- bs (binary suffer): 1 if the subject suffers and 0 if not, according to the frequency of the labels (in case of a ti,e it is marked as suffers)
-- bsf (binary suffer favour): 1 if the subject suffers and is in favour, and 0 if not, according to the frequency of the labels
-- bsa (binary suffer against): 1 if the subject suffers and is agains,t and 0 if not, according to the frequency of the labels
-- bso (binary suffer other):  1 if the subject suffers and is neither in favour nor against, and 0 if not, according to the frequency of the labels
-- bc (binary control): 1 if the subject does not suffer and 0 if they do, according to the frequency of the labels (in case of a ti,e it is marked as suffers)
-- rbs (regression binary suffer): number of times the subject has been marked as suffering among the total number of scorers, i.e., 10
-- rbc (regression binary control): number of times the subject has been marked as not suffering among the total number of scorers, i.e., 10
-- rsf (regression suffer favour): number of times the subject has been marked as suffering and in favour among the total number of scorers, i.e., 10
-- rsa (regression suffer against): number of times the subject has been marked as suffering and against and in favour among the total number of scorers, i.e., 10
-- rso (regression suffer other): number of times the subject has been marked as suffering and is neither in favour nor against among the total number of scorers, i.e., 10
-- rc (regression control): number of times the subject has been marked as not suffering among the total number of scorers, i.e., 10 (Note that it is equal to 'rbc')
+| Edition (task website) | Venue | Tasks | Data |
+|---|---|---|---|
+| [2023](https://sites.google.com/view/mentalriskes) | IberLEF 2023 | Task 1: eating disorders detection (1.a binary classification, 1.b simple regression). Task 2: depression detection (2.a binary classification, 2.b simple regression, 2.c multiclass: suffer+against, suffer+in favour, suffer+other, control; 2.d multi-output regression). Task 3: detection of a non-defined disorder, cross-domain evaluation (3.a binary classification, 3.b simple regression) | MentalRiskES corpus |
+| [2024](https://sites.google.com/view/mentalriskes2024) | IberLEF 2024 | Task 1: disorder detection (multiclass: depression, anxiety or none). Task 2: context detection (two-level multiclass: disorder plus the context it comes from: addiction, emergency, family, work, social, other or none). Task 3: suicidal ideation detection (binary classification; only test data is provided) | Telegram data from the MentalRiskES corpus |
+| [2025](https://sites.google.com/view/mentalriskes2025) | IberLEF 2025 (Zaragoza) | Task 1: risk detection of gambling disorders (binary classification). Task 2: type of addiction detection (multiclass classification) | PRECOM-SM corpus (gambling in Spanish social media), unrelated to the MentalRiskES corpus |
+| [2026](https://sites.google.com/view/mentalriskes2026) | IberLEF 2026 (León) | Task 1: early symptom detection in therapeutic conversations (inferring answers to psychometric instruments: PHQ-9, CompACT-10 and GAP-7). Task 2: therapist response selection (decision support for therapists) | New data, generated and validated with the involvement of psychologists |
 
-So, the labels 'rbs' and 'rbc' must sum to 1, and the labels 'rsf', 'rsa', 'rso' and 'rc' must sum to 1 too.
+## Repository contents
 
-### Preprocessing 🧹
-The same corpus is found with emojis or without emojis; that is to say, in the folder 'processed' is the corpus with emojis in text format, while in the folder 'raw' is the corpus with emojis in original format.
-
-### MentalRiskES evaluation campaign 🚀
-[MentalRiskES](https://sites.google.com/view/mentalriskes) is a shared task organized at IberLEF. This task aims to promote the early detection of mental risk disorders in Spanish. In this task, we used the corpusMentalRiskES; the partitions used are available in the folder MentalRiskES2023edition.zip. To cite the task: 
-Mármol-Romero, A. M., Moreno-Muñoz, A., Plaza-del-Arco, F. M., Molina-González, M. D., Martín-Valdivia, M. T., Ureña-López, L. A., & Montejo-Raéz, A. (2023). Overview of MentalriskES at IberLEF 2023: Early Detection of Mental Disorders Risk in Spanish. Procesamiento del Lenguaje Natural, 71, 329-350.
 ```
+.
+├── data/
+│   ├── mentalriskes2023/
+│   │   ├── mentalriskes2023_task1.zip
+│   │   ├── mentalriskes2023_task2.zip
+│   │   └── mentalriskes2023_task3.zip
+│   ├── mentalriskes2024/
+│   │   ├── mentalriskes2024_task1.zip
+│   │   ├── mentalriskes2024_task2.zip
+│   │   └── mentalriskes2024_task3.zip
+│   ├── mentalriskes2025/
+│   │   ├── mentalriskes2025_task1.zip
+│   │   └── mentalriskes2025_task2.zip
+│   └── mentalriskes2026/        # TODO: add when the collection is released
+├── scripts/
+│   ├── MentalRiskES2023/
+│   │   ├── classEvaluation.py
+│   │   ├── ClientServer.ipynb
+│   │   └── CodeCarbon.ipynb
+│   └── MentalRiskES2024/
+│       ├── classEvaluation.py
+│       ├── ClientServer.ipynb
+│       └── CodeCarbon.ipynb
+├── LICENSE
+└── README.md
+```
+
+- **`data/`**: the task collections of each edition, one password-protected zip per task (see [Access](#access)).
+- **`scripts/`**: the evaluation resources of the editions: the evaluation script (`classEvaluation.py`), the client-server notebook used to simulate the stream of messages round by round (`ClientServer.ipynb`) and the notebook to track the carbon footprint of the systems (`CodeCarbon.ipynb`).
+
+Inside each task zip, the task has the partitions used in the evaluation:
+
+```
+<task>/
+├── train/
+│   ├── data/     # message files (JSON)
+│   └── gold/     # labels (txt)
+├── trial/
+│   ├── data/
+│   └── gold/
+└── test/
+    ├── data/
+    └── gold/
+```
+
+### File formats
+
+> In the 2024 edition, Task 3 (suicidal ideation detection) provides only test data: participants had to train their systems with their own or external data.
+
+The format below corresponds to the 2023 and 2024 collections.
+
+`data/` contains JSON files with lists of messages:
+
+```json
+{
+  "id_message": 79865009803,
+  "nick": "subject1",
+  "round": 1,
+  "message": "...",
+  "date": "2020-04-07 05:00:02"
+}
+```
+
+- `nick`: anonymous identifier of the subject.
+- `round`: round in which the message is delivered to the participants in the online simulation.
+
+`gold/` contains one or more `.txt` files with the labels of the subjects, in CSV format with the header `Subject,label`. The number of gold files depends on the task: for example, the 2023 Task 2 has four (`gold_a.txt` to `gold_d.txt`), one for each of its subtasks 2.a to 2.d.
+
+```
+Subject,label
+subject1,1
+subject104,0
+```
+
+## Access
+
+The collections contain messages written by real users, so access is restricted and granted on an individual basis, only for research purposes.
+
+1. Fill in and sign the [**Individual Application to use the MentalRiskES Research Collection**](https://docs.google.com/forms/d/e/1FAIpQLSfASdCzvR6DCWpFXb4eDpF6gh7CjhJKT1bH2l-SdCcxTP7l7Q/viewform?usp=header), indicating the collection you need (for example `mentalriskes2023_task2` or `mentalriskes2024_task1`).
+2. Contact the organizers (see [Contact](#contact)).
+3. You will receive the password of the requested zip file(s) after your application is reviewed.
+
+By applying you accept, among others, the following terms (the signed application contains the full text):
+
+- The information may only be used for research purposes.
+- You may not identify the individuals whose texts are included, cross-reference them with other data, or contact them.
+- You may not publish any portion of the data (e.g. example posts) other than summary statistics, nor share it with anyone else.
+- You may not make commercial use of the collection.
+- Any publication derived from the collection must cite the corresponding paper(s) (see [Citation](#citation)).
+- You must stop using the collection and delete it if the organizers or copyright holders ask you to.
+
+All findings obtained with this data are intended strictly for **non-clinical research**. Individuals in need of professional help are advised to consult licensed psychiatrists or clinicians.
+
+## The MentalRiskES corpus
+
+The corpus of Telegram conversations on which the 2023 and 2024 editions were built is distributed separately, with automated access, as a Hugging Face dataset:
+
+👉 **[huggingface.co/datasets/TU_ORG/MentalRiskES](https://huggingface.co/datasets/amarmol/MentalRiskES)**
+
+It contains the whole corpus (eating disorders, depression and anxiety, with the processed and the raw version of the text), loadable with `load_dataset`. It does **not** contain the train/trial/test partitions of the shared task: those are the collections of this repository.
+
+## Citation
+
+Cite the **overview paper of the edition** you use and, when the edition is built on a dataset with its own paper, **also the data paper**. The table tells you which entries to copy; the BibTeX of each edition is given separately below.
+
+| Edition | Overview paper | Data paper |
+|---|---|---|
+| [2023](#2023) | `marmol2023overview` | `marmol-romero-etal-2024-mentalriskes-new` (MentalRiskES corpus) |
+| [2024](#2024) | `marmol2024overview` | `marmol-romero-etal-2024-mentalriskes-new` (MentalRiskES corpus) |
+| [2025](#2025) | `marmol2025overview` | `alvarez2025precom` (PRECOM-SM corpus) |
+| [2026](#2026) | `marmol2026overview` | none |
+
+### 2023
+
+Overview of the edition:
+
+```bibtex
 @article{marmol2023overview,
   title={Overview of MentalriskES at IberLEF 2023: Early Detection of Mental Disorders Risk in Spanish},
   author={M{\'a}rmol-Romero, Alba Mar{\'\i}a and Moreno-Mu{\~n}oz, Adri{\'a}n and Plaza-del-Arco, Flor Miriam and Molina-Gonz{\'a}lez, Mar{\'\i}a Dolores and Mart{\'\i}n-Valdivia, Maria Teresa and Ure{\~n}a-L{\'o}pez, Luis Alfonso and Montejo-Ra{\'e}z, Arturo},
@@ -61,8 +146,28 @@ Mármol-Romero, A. M., Moreno-Muñoz, A., Plaza-del-Arco, F. M., Molina-Gonzále
   year={2023}
 }
 ```
-Mármol-Romero, A. M., Moreno-Muñoz, A., Plaza-del-Arco, F. M., Molina-González, M. D., Martín-Valdivia, M. T., Ureña-López, L. A., & Montejo-Raéz, A. (2024). Overview of MentalriskES at IberLEF 2024: Early Detection of Mental Disorders Risk in Spanish. Procesamiento del Lenguaje Natural, 73, 435-448.
+
+Data: the [MentalRiskES corpus](#the-mentalriskes-corpus):
+
+```bibtex
+@inproceedings{marmol-romero-etal-2024-mentalriskes-new,
+  title = "{M}ental{R}isk{ES}: A New Corpus for Early Detection of Mental Disorders in {S}panish",
+  author = "M{\'a}rmol-Romero, Alba Mar{\'\i}a and Moreno-Mu{\~n}oz, Adri{\'a}n and Plaza-del-Arco, Flor Miriam and Molina-Gonz{\'a}lez, M. Dolores and Mart{\'\i}n-Valdivia, Mar{\'\i}a Teresa and Ure{\~n}a-L{\'o}pez, L. Alfonso and Montejo-R{\'a}ez, Arturo",
+  booktitle = "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+  month = may,
+  year = "2024",
+  address = "Torino, Italia",
+  publisher = "ELRA and ICCL",
+  url = "https://aclanthology.org/2024.lrec-main.978",
+  pages = "11204--11214"
+}
 ```
+
+### 2024
+
+Overview of the edition:
+
+```bibtex
 @article{marmol2024overview,
   title={Overview of MentalriskES at IberLEF 2024: Early Detection of Mental Disorders Risk in Spanish},
   author={M{\'a}rmol-Romero, Alba Mar{\'\i}a and Moreno-Mu{\~n}oz, Adri{\'a}n and Plaza-del-Arco, Flor Miriam and Molina-Gonz{\'a}lez, Mar{\'\i}a Dolores and Mart{\'\i}n-Valdivia, Maria Teresa and Ure{\~n}a-L{\'o}pez, Luis Alfonso and Montejo-Ra{\'e}z, Arturo},
@@ -73,48 +178,67 @@ Mármol-Romero, A. M., Moreno-Muñoz, A., Plaza-del-Arco, F. M., Molina-Gonzále
 }
 ```
 
-## Zenodo 📂
-Dataset: 10.5281/zenodo.8055604 (DOI)
+Data: the [MentalRiskES corpus](#the-mentalriskes-corpus):
 
-## Ethics Statement ⭐
-The main purpose of creating this dataset is to provide a tool for developing systems with scientific aims and advancing artificial intelligence to detect mental disorders among young people on social networks at an early stage. The data has been labelled using measures to ensure gender diversity and avoid discrimination through our annotation platform. It's important to emphasize that all findings from this dataset are intended strictly for non-clinical research. Individuals in need of professional help are advised to consult licensed psychiatrists or clinicians.
+```bibtex
+@inproceedings{marmol-romero-etal-2024-mentalriskes-new,
+  title = "{M}ental{R}isk{ES}: A New Corpus for Early Detection of Mental Disorders in {S}panish",
+  author = "M{\'a}rmol-Romero, Alba Mar{\'\i}a and Moreno-Mu{\~n}oz, Adri{\'a}n and Plaza-del-Arco, Flor Miriam and Molina-Gonz{\'a}lez, M. Dolores and Mart{\'\i}n-Valdivia, Mar{\'\i}a Teresa and Ure{\~n}a-L{\'o}pez, L. Alfonso and Montejo-R{\'a}ez, Arturo",
+  booktitle = "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+  month = may,
+  year = "2024",
+  address = "Torino, Italia",
+  publisher = "ELRA and ICCL",
+  url = "https://aclanthology.org/2024.lrec-main.978",
+  pages = "11204--11214"
+}
+```
 
-## Contact 📩
-To request access to the corpus, please fill this [form](https://docs.google.com/forms/d/e/1FAIpQLSfASdCzvR6DCWpFXb4eDpF6gh7CjhJKT1bH2l-SdCcxTP7l7Q/viewform?usp=header) and then contact:
+### 2025
+
+Overview of the edition:
+
+```bibtex
+@article{marmol2025overview,
+  title={Overview of MentalRiskES at IberLEF 2025: Early Detection of Addiction Risk in Spanish},
+  author={M{\'a}rmol-Romero, Alba Mar{\'\i}a and {\'A}lvarez-Ojeda, Pablo and Moreno-Mu{\~n}oz, Adri{\'a}n and Plaza-del-Arco, Flor Miriam and Molina-Gonz{\'a}lez, M. Dolores and Mart{\'\i}n-Valdivia, M. Teresa and Ure{\~n}a-L{\'o}pez, L. Alfonso and Montejo-R{\'a}ez, Arturo},
+  journal={Procesamiento del Lenguaje Natural},
+  volume={75},
+  pages={425--440},
+  year={2025}
+}
+```
+
+Data: the PRECOM-SM corpus (gambling in Spanish social media). It is a different resource from the MentalRiskES corpus:
+
+```bibtex
+@inproceedings{alvarez2025precom,
+  title={The precom-sm corpus: Gambling in spanish social media},
+  author={{\'A}lvarez-Ojeda, Pablo and Cantero-Romero, Mar{\'\i}a Victoria and Semikozova, Anastasia and Montejo-R{\'a}ez, Arturo},
+  booktitle={Proceedings of the 31st International Conference on Computational Linguistics},
+  pages={17--28},
+  year={2025}
+}
+```
+
+### 2026
+
+Overview of the edition (the data were created for this edition):
+
+```bibtex
+@article{marmol2026overview,
+  title={Overview of MentalRiskES at IberLEF 2026: Early Detection of Mental Disorders Risk in Spanish},
+  author={M{\'a}rmol-Romero, Alba Mar{\'\i}a and Su{\'a}rez-Maroto, Fabi{\'a}n and Garc{\'\i}a-Viedma, Rosario and Hern{\'a}ndez-L{\'o}pez, M{\'o}nica and Plaza-del-Arco, Flor Miriam and Molina-Gonz{\'a}lez, M. Dolores and Ure{\~n}a-L{\'o}pez, L. Alfonso and Montejo-R{\'a}ez, Arturo},
+  journal={Procesamiento del Lenguaje Natural},
+  volume={77},
+  month=sep,
+  year={2026}
+}
+```
+
+## Contact
+
+To request access or ask about the collections:
+
 - Alba M. Mármol Romero (amarmol@ujaen.es)
 - Arturo Montejo Ráez (amontejo@ujaen.es)
-
-## Acknowledgements 
-This work has been partially supported by projects CONSENSO (PID2021-122263OB-C21), MODERATES (TED2021-130145B-I00), SocialTOX (PDC2022-133146-C21) funded by Plan Nacional I+D+i from the Spanish Government, project PRECOM (SUBV-00016) funded by Spanish Ministry of Consumer Affairs, and the Big Hug project (P20\_00956, PAIDI 2020), funded by the Andalusian Regional Government.
-
-## Citation of the corpus ❗
-Mármól-Romero, A. M., Moreno-Muñoz, A., Plaza-del-Arco, F. M., Molina-González, M. D., Martín-Valdivia, M. T., Ureña-López, L. A., & Montejo-Ráez, A. (2024). MentalRiskES: A new corpus for early detection of mental disorders in Spanish. En N. Calzolari, M.-Y. Kan, V. Hoste, A. Lenci, S. Sakti & N. Xue (Eds.), Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024) (pp. 11204–11214). ELRA and ICCL. 
-https://aclanthology.org/2024.lrec-main.978
-
-```
-@inproceedings{marmol-romero-etal-2024-mentalriskes-new,
-    title = "{M}ental{R}isk{ES}: A New Corpus for Early Detection of Mental Disorders in {S}panish",
-    author = "M{\'a}rmol-Romero, Alba Mar{\'\i}a  and
-      Moreno-Mu{\~n}oz, Adri{\'a}n  and
-      Plaza-del-Arco, Flor Miriam  and
-      Molina-Gonz{\'a}lez, M. Dolores  and
-      Mart{\'\i}n-Valdivia, Mar{\'\i}a Teresa  and
-      Ure{\~n}a-L{\'o}pez, L. Alfonso  and
-      Montejo-R{\'a}ez, Arturo",
-    editor = "Calzolari, Nicoletta  and
-      Kan, Min-Yen  and
-      Hoste, Veronique  and
-      Lenci, Alessandro  and
-      Sakti, Sakriani  and
-      Xue, Nianwen",
-    booktitle = "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
-    month = may,
-    year = "2024",
-    address = "Torino, Italia",
-    publisher = "ELRA and ICCL",
-    url = "https://aclanthology.org/2024.lrec-main.978",
-    pages = "11204--11214",
-    abstract = "With mental health issues on the rise on the Web, especially among young people, there is a growing need for effective identification and intervention. In this paper, we introduce a new open-sourced corpus for the early detection of mental disorders in Spanish, focusing on eating disorders, depression, and anxiety. It consists of user messages posted on groups within the Telegram message platform and contains over 1,300 subjects with more than 45,000 messages posted in different public Telegram groups. This corpus has been manually annotated via crowdsourcing and is prepared for its use in several Natural Language Processing tasks including text classification and regression tasks. The samples in the corpus include both text and time data. To provide a benchmark for future research, we conduct experiments on text classification and regression by using state-of-the-art transformer-based models.",
-}
-
-```
